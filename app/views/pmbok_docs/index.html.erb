@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pmbok Docs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pmbok_docs.each do |pmbok_doc| %>
+      <tr>
+        <td><%= pmbok_doc.name %></td>
+        <td><%= link_to 'Show', pmbok_doc %></td>
+        <td><%= link_to 'Edit', edit_pmbok_doc_path(pmbok_doc) %></td>
+        <td><%= link_to 'Destroy', pmbok_doc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pmbok doc', new_pmbok_doc_path %>

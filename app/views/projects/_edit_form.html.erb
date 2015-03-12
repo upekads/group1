@@ -1,0 +1,60 @@
+<%= form_for(@project) do |f| %>
+    <% if @project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+          <ul>
+            <% @project.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+
+    <% if @project.project_teams.size > 0 %>
+        <%= f.fields_for :project_teams do |eaf| %>
+            <% if !eaf.object.new_record? %>
+                <div class="field">
+
+                      <%= eaf.object.user.name %>
+                   <%= eaf.check_box :_destroy, f: eaf %>
+                  <%= eaf.label :_destroy, "Remove Member", f: eaf %>
+                </div>
+            <% end %>
+        <% end %>
+    <% end %>
+
+
+
+
+
+
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+
+<h4>New Project Members</h4>
+<%= form_for(@project) do |f| %>
+<%= f.fields_for :project_teams, @project.project_teams.build do |eaf| %>
+    <% if eaf.object.new_record? %>
+        <%= render '/project_teams/form', f: eaf %>
+    <% end %>
+<% end %>
+<div class="actions">
+  <%= f.submit 'Add Member' %>
+</div>
+<% end %>
+
+<fieldset>
+  <h4>New Project Documents</h4>
+  <%= link_to 'Create Project Documents', new_project_project_document_path(@project) %>
+</fieldset>

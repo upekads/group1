@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pmbok doc:</strong>
+  <%= @project_document.pmbok_doc %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @project_document.project %>
+</p>
+
+<%= link_to 'Edit', edit_project_document_path(@project_document) %> |
+<%= link_to 'Back', project_documents_path %>

@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+
+
+<fieldset>
+<% if @project_teams.size > 0 %>
+
+     <h4>Project Team</h4>
+    <table class="table">
+      <thead>
+      <tr>
+        <th colspan="4">Project Member name</th>
+        <th colspan="3">Role</th>
+
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @project_teams.each do |ea| %>
+          <tr>
+            <td colspan="4"><%= ea.user.name %></td>
+            <td colspan="3"><%= ea.project_role.rolename %></td>
+          </tr>
+      <% end %>
+
+      </tbody>
+    </table>
+<% end %>
+  </fieldset>
+</br>
+
+<fieldset>
+<% if @project_documents.size > 0 %>
+
+    <h4>Project Document List</h4>
+    <table class="table">
+      <thead>
+      <tr>
+        <th colspan="3">Document name</th>
+        <th colspan="3">PMBOk_Document Type</th>
+      </tr>
+      </thead>
+
+      <tbody>
+    <% @project_documents.each do |ea| %>
+          <tr>
+            <td colspan="4"><%= link_to ea.docname, :target => "_blank" %></td>
+            <td colspan="3"><%= ea.pmbok_doc.name %></td>
+          </tr>
+    <% end %>
+      </tbody>
+    </table>
+
+      <% else %>
+      <h4>No Project Document are created yet</h4>
+
+<% end %>
+
+  </fieldset>
+</br>
+
+<fieldset>
+        <h4>Work Flow</h4>
+
+</fieldset>
+</br>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+</br>
+

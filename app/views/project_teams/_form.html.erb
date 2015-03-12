@@ -1,0 +1,16 @@
+
+   <fieldset>
+  <div class="field">
+    <%= f.label :user %><br>
+    <%= f.collection_select(:user_id,  User.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :project_id, :value => @project.id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_role %><br>
+    <%= f.collection_select(:project_role_id,  ProjectRole.all, :id, :rolename) %>
+  </div>
+   </fieldset>
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4266848926">
+    <data-source source="LOCAL" name="Rails DIMSV3: development" uuid="d11eeead-76fc-4583-a13b-3a4ac18fe552">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:DIMSV3_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails DIMSV3: test" uuid="7d4b0691-203c-4d42-b3a8-7c988a1a15c8">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:DIMSV3_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails DIMSV3: production" uuid="0811e7bb-faf1-478f-97ff-2312670a46a8">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:DIMSV3_production</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
